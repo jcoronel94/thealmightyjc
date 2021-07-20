@@ -1,26 +1,26 @@
 <mat-toolbar color="primary">
     <mat-toolbar-row class="equal_column_spacer">
-        <div>
-            <button mat-menu-item (click)="item.click()" *ngFor="let item of navList.home">
-                <mat-icon
-                        *ngIf="item.icon">
-                    {{item.icon}}
-                </mat-icon>
-            </button>
-        </div>
-        <nav>
-            <ul>
-                <li *ngFor="let item of navList.commonItems">
-                    <button mat-button (click)="item.click()">
-                        <mat-icon
-                                *ngIf="item.icon">
-                            {{item.icon}}
-                        </mat-icon>
-                        <span class="d-none d-md-inline">{{item.textContent}}</span>
-                    </button>
-                </li>
-            </ul>
-        </nav>
+        <ng-container *ngFor="let item of navList">
+            <div>
+                <button mat-menu-item (click)="goto(item.url_slug)">
+                    <mat-icon *ngIf="item.icon">
+                        {{item.icon}}
+                    </mat-icon>
+                </button>
+            </div>
+            <nav>
+                <ul>
+                    <li *ngFor="let subitem of item.common_items">
+                        <button mat-button (click)="goto(subitem.url_slug)">
+                            <mat-icon *ngIf="subitem.icon">
+                                {{subitem.icon}}
+                            </mat-icon>
+                            <span class="d-none d-md-inline">{{subitem.menu_item_label}}</span>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </ng-container>
     </mat-toolbar-row>
 </mat-toolbar>
 <div class="container-fluid outlet-container">

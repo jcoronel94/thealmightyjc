@@ -1,83 +1,42 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
-import {Subscription} from 'rxjs';
-import {NavList} from '../models';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { NavList } from '../models';
+import { butterService } from '../services';
 
 @Component({
-    selector: 'app-nav',
-    templateUrl: './nav.component.html',
-    styleUrls: ['./nav.component.scss']
+  selector: 'app-nav',
+  templateUrl: './nav.component.html',
+  styleUrls: ['./nav.component.scss']
 })
 export class NavComponent implements OnInit, OnDestroy {
 
-    constructor(private router: Router) {
-    }
+  constructor(private router: Router) {
+  }
 
-    navList!: NavList;
-    private subscription!: Subscription;
+  navList!: any[];
+  private subscription!: Subscription;
 
-    ngOnInit() {
-        this.createTopNavItems();
-    }
+  ngOnInit() {
+    this.fetchNav()
+  }
 
-    ngOnDestroy() {
-        if (this.subscription) {
-            this.subscription.unsubscribe();
-        }
+  ngOnDestroy() {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
     }
+  }
 
-    private createTopNavItems() {
-        this.navList = {
-            home: [
-                {
-                    textContent: 'Home',
-                    icon: 'home',
-                    svg: true,
-                    click: () => this.gotoHome()
-                }
-            ],
-            commonItems: [
-                {
-                    textContent: 'Customer',
-                    icon: undefined,
-                    click: () => this.gotoCustomer()
-                },
-                {
-                    textContent: 'FAQ',
-                    icon: undefined,
-                    click: () => this.gotoFaq()
-                },
-                {
-                    textContent: 'Blog Posts',
-                    icon: undefined,
-                    click: () => this.gotoBlogPosts()
-                },
-                {
-                    textContent: 'RSS, Atom & Sitemap',
-                    icon: undefined,
-                    click: () => this.gotoMisc()
-                }
-            ]
-        };
-    }
+  fetchNav() {
 
-    gotoHome() {
-        this.router.navigate([`/home`]);
-    }
+    butterService.content.retrieve(["nav"], {}).then( (resp) => {
+      console.log(resp)
+      console.log( resp.data?.data?.nav)
+      this.navList = resp.data?.data?.nav || []
+    });
+  }
 
-    gotoCustomer() {
-        this.router.navigate([`/customer`]);
-    }
-
-    gotoFaq() {
-        this.router.navigate([`/faq`]);
-    }
-
-    gotoBlogPosts() {
-        this.router.navigate([`/blog`]);
-    }
-
-    gotoMisc() {
-        this.router.navigate([`/rss`]);
-    }
+  goto(slug: any) {
+    this.router.navigate([`/` + slug]);
+  }
 }

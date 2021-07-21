@@ -18,6 +18,8 @@ import { FormsModule } from '@angular/forms';
 import { AppMaterialModule } from './shared/app-material.module';
 import { AboutComponent } from './about/about.component';
 import { BlogPostComponent } from './blog-post/blog-post.component';
+import { FlipCardsComponent } from './flip-cards/flip-cards.component';
+import { AnimatedCardComponent } from './animated-card/animated-card.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { BlogPostComponent } from './blog-post/blog-post.component';
     BlogPostListingComponent,
     HomeComponent,
     AboutComponent,
-    BlogPostComponent
+    BlogPostComponent,
+    FlipCardsComponent,
+    AnimatedCardComponent
   ],
   imports: [
     BrowserModule,

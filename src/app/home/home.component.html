@@ -1,7 +1,43 @@
-<mat-card>
-    <mat-card-footer>
-        <div class="page-footer" matTooltip="Shows Hello-You component">
-            <a href="/about"><mat-icon>whatshot</mat-icon></a>
+<section id="hero" class="banner">
+    <div fxLayout='column' fxLayoutAlign="center center">
+        <div fxflex fxLayout='row' fxLayoutAlign="center center" class="inner-section">
+            <div fxFlex="1 1 80%" fxFlex.lt-md="1 1 100%">
+                <div class="title">{{rendering?.fields?.hero?.headline}} <i></i></div>
+                <div class="mat-display-2"><strong>{{rendering?.fields?.hero?.sub_headline}}</strong></div>
+                <!-- <div class="inner-section-subtext">
+                creating software since i was a wee lad
+            </div> -->
+                <!-- <div>
+                    <div id="elementToAnimate">
+                       <img src="https://cdn.pixabay.com/photo/2014/04/02/10/38/spaceship-304073_1280.png">
+                    </div>
+                </div> -->
+                <a *ngIf="rendering.fields.cta"></a>
+            </div>
         </div>
-    </mat-card-footer>
-</mat-card>
+    </div>
+    <h1></h1>
+</section>
+
+<!-- <section fxLayout='row wrap'>
+    <ng-container *ngFor="let item of rendering?.fields?.gallery[0]?.fields?.gallery_item">
+        <div fxFlex="1 1 50" fxFlex.lt-md="1 1 100">
+            <img [src]="item.image" alt="test">
+        </div>
+    </ng-container>
+</section> -->
+
+<!-- <section fxLayout='row wrap'>
+    <ng-container *ngFor="let item of rendering?.fields?.gallery[0]?.fields?.gallery_item">
+
+        <a href="#" class="card">
+            <mat-card class="overlay" fxFlex="1 1 50" fxFlex.lt-md="1 1 100" class="mat-elevation-z">
+                <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+                    alt="Photo of a Shiba Inu">
+            </mat-card>
+        </a>
+    </ng-container>
+</section> -->
+<section class="relative"> 
+    <app-flip-cards [panelItems]="rendering?.fields?.panels?.panel_item"></app-flip-cards>
+</section>

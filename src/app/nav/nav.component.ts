@@ -28,10 +28,7 @@ export class NavComponent implements OnInit, OnDestroy {
   }
 
   fetchNav() {
-
     butterService.content.retrieve(["nav"], {}).then( (resp) => {
-      console.log(resp)
-      console.log( resp.data?.data?.nav)
       this.navList = resp.data?.data?.nav || []
     });
   }

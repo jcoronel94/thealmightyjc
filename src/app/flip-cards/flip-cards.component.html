@@ -1,0 +1,39 @@
+<!-- <div class="card">
+    <div class="card-front">
+        <img src="https://material.angular.io/assets/img/examples/shiba2.jpg">
+    </div>
+
+    <a href="#" class="card-back">
+        <h2>Jane Doe<br><span>Senior Designer</span></h2>
+        <div class="social-icons">
+            <a href="#" class="fa fa-facebook" aria-hidden="true"></a>
+            <a href="#" class="fa fa-twitter" aria-hidden="true"></a>
+            <a href="#" class="fa fa-google-plus" aria-hidden="true"></a>
+            <a href="#" class="fa fa-linkedin" aria-hidden="true"></a>
+            <a href="#" class="fa fa-instagram" aria-hidden="true"></a>
+        </div>
+    </a>
+</div> -->
+
+<section id="flip-cards">
+    <div fxflex fxLayout='row wrap' fxLayoutAlign="start center" class="inner-section">
+        <ng-container *ngFor="let item of panelItems">
+            <div [fxFlex]="item.desktop" [fxFlex.lt-lg]="item.mobile">
+                <div class="inner-box">
+                    <div class="image">
+                        <img [src]="item.image">
+                        <div class="overlay-box">
+                            <div class="overlay-inner">
+                                <div class="content">
+                                    <h3><a [href]="item?.url">{{item?.text}}</a></h3>
+                                    <div class="category">{{item?.category}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+     
+    </div>
+</section>

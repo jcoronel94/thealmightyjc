@@ -6,12 +6,46 @@
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
 // Be sure that you only ever include this mixin once!
-@include mat.core();
+// $custom-typography: mat-typography-config($font-family: "'Noto Sans TC', sans-serif;");
+$custom-typography: mat.define-typography-config(
+ 
+  $font-family: "Noto Sans TC, Roboto, sans-serif;",
+);
+@include mat.core($custom-typography);
 
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$thealmightyjc-primary: mat.define-palette(mat.$indigo-palette);
+
+$c-light-text:white;
+$c-dark-text: #000000;
+
+$my-palette :  (
+ 50: #e4f2fb,
+ 100: #bddef7,
+ 200: #95caf1,
+ 300: #6eb5eb,
+ 400: #53a5e8,
+ 500: #3c96e4,
+ 600: #3688d7,
+ 700: #2e77c4,
+ 800: #2866b2,
+ 900: #1d4993,
+ // ... continues to 900
+ contrast: (
+   50: $c-dark-text,
+   100: $c-dark-text,
+   200: $c-dark-text,
+   300: $c-dark-text,
+   400: $c-dark-text,
+   500: $c-dark-text,
+   600: $c-dark-text,
+   700: $c-light-text,
+   800: $c-light-text,
+   900: $c-light-text
+ )
+);
+$thealmightyjc-primary: mat.define-palette($my-palette,800);
 $thealmightyjc-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
@@ -27,6 +61,8 @@ $thealmightyjc-theme: mat.define-light-theme((
   )
 ));
 
+$social-blue: #2867b2;
+
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
@@ -35,8 +71,13 @@ $thealmightyjc-theme: mat.define-light-theme((
 
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body { height: 100%; color: #555555}
+body { margin: 0; font-family: 'Noto Sans TC', Roboto, "Helvetica Neue", sans-serif; }
+
+
+h1,h2,h3,h4,h5,h6{
+  color:$social-blue;
+}
 
 .equal_column_spacer {
   display: flex;
@@ -57,4 +98,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   align-items: center;
   justify-content: center;
   padding: 10px 0;
+}
+
+.box{
+  padding: 20px;
 }

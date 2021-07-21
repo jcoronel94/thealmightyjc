@@ -1,0 +1,66 @@
+img{
+    width:100%;
+    height:auto;
+}
+.inner-section{
+    text-align: center;
+    position: relative;
+    padding: 120px 0px;
+}
+
+
+
+@keyframes alien {
+    0.0%{
+        transform: translate(0, 0) rotate(0deg) scale(1);
+    }
+    24.7%{
+        transform: translate(50px, 0) rotate(0deg) scale(1);
+    }
+    36.3%{
+        transform: translate(200px, -110px) rotate(-20deg) scale(0);
+    }
+    100%{
+        transform: translate(200px, -110px) rotate(-20deg) scale(0);
+    }
+}
+
+// @-webkit-keyframes alien {
+//     0.0%{
+//         transform: translate(-50px, 0) rotate(0deg) scale(1);
+//     }
+//     14.7%{
+//         transform: translate(20px, 0) rotate(0deg) scale(1);
+//     }
+//     26.3%{
+//         transform: translate(200px, -110px) rotate(-20deg) scale(0);
+//     }
+//     100%{
+//         transform: translate(200px, -110px) rotate(-20deg) scale(0);
+//     }
+// }
+
+/* Add the animation: property to whichever element you want to animate */
+#elementToAnimate{
+    position: absolute;
+    left: 50%;
+    margin-left: -50px;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    font-size: 65px;
+    transform-origin: center center; 
+    animation: alien 3s linear 0s reverse none;
+}
+
+
+.mat-card{
+    padding:0;
+    .mat-card-image{
+        margin:0;
+    }
+}
+
+.relative{
+    position: relative;
+}

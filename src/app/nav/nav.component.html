@@ -1,12 +1,14 @@
-<mat-toolbar color="primary">
+<mat-toolbar>
     <mat-toolbar-row class="equal_column_spacer">
         <ng-container *ngFor="let item of navList">
             <div>
-                <button mat-menu-item (click)="goto(item.url_slug)">
+                <!-- <button mat-menu-item (click)="goto(item.url_slug)">
                     <mat-icon *ngIf="item.icon">
                         {{item.icon}}
                     </mat-icon>
-                </button>
+                </button> -->
+
+                <a [routerLink]="item.url_slug"><img src="https://cdn.buttercms.com/HBfsUvCfRJyOdKXk4n85"></a>
             </div>
             <nav>
                 <ul>

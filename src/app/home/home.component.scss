@@ -5,10 +5,16 @@ img{
 .inner-section{
     text-align: center;
     position: relative;
-    padding: 120px 0px;
+    padding: 70px 0px;
 }
 
+.image-container{
+    padding-bottom:30px;
+}
 
+.hero{
+    box-shadow: 15px 28px 25px -18px #0003;
+}
 
 @keyframes alien {
     0.0%{
@@ -25,31 +31,31 @@ img{
     }
 }
 
-// @-webkit-keyframes alien {
-//     0.0%{
-//         transform: translate(-50px, 0) rotate(0deg) scale(1);
-//     }
-//     14.7%{
-//         transform: translate(20px, 0) rotate(0deg) scale(1);
-//     }
-//     26.3%{
-//         transform: translate(200px, -110px) rotate(-20deg) scale(0);
-//     }
-//     100%{
-//         transform: translate(200px, -110px) rotate(-20deg) scale(0);
-//     }
-// }
+@-webkit-keyframes alien {
+    0.0%{
+        transform: translate(-50px, 0) rotate(0deg) scale(1);
+    }
+    14.7%{
+        transform: translate(20px, 0) rotate(0deg) scale(1);
+    }
+    26.3%{
+        transform: translate(200px, -110px) rotate(-20deg) scale(0);
+    }
+    100%{
+        transform: translate(200px, -110px) rotate(-20deg) scale(0);
+    }
+}
 
 /* Add the animation: property to whichever element you want to animate */
 #elementToAnimate{
     position: absolute;
     left: 50%;
-    margin-left: -50px;
+    margin-left: -100px;
     border-radius: 50%;
     height: 100px;
-    width: 100px;
+    width: 150px;
     font-size: 65px;
-    transform-origin: center center; 
+    transform-origin: center center;
     animation: alien 3s linear 0s reverse none;
 }
 

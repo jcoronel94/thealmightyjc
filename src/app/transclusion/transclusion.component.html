@@ -1,0 +1,5 @@
+<div fxflex fxLayout='row' fxLayoutAlign="center center" class="transclusion">
+    <div [fxFlex]="desktop" [fxFlex.lt-md]="mobile">
+        <ng-content></ng-content>
+    </div>
+</div>

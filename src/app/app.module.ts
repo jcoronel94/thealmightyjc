@@ -20,6 +20,8 @@ import { AboutComponent } from './about/about.component';
 import { BlogPostComponent } from './blog-post/blog-post.component';
 import { FlipCardsComponent } from './flip-cards/flip-cards.component';
 import { AnimatedCardComponent } from './animated-card/animated-card.component';
+import { TransclusionComponent } from './transclusion/transclusion.component';
+import { HeadlineComponent } from './headline/headline.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { AnimatedCardComponent } from './animated-card/animated-card.component';
     AboutComponent,
     BlogPostComponent,
     FlipCardsComponent,
-    AnimatedCardComponent
+    AnimatedCardComponent,
+    TransclusionComponent,
+    HeadlineComponent
   ],
   imports: [
     BrowserModule,

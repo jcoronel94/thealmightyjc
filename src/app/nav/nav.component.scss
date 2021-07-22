@@ -10,7 +10,7 @@ li {
     font-size: 12px;
     cursor: pointer;
     &::after {
-        content: '|';
+        content: ' ';
         padding: 5px;
     }
     &:last-child::after {

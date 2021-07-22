@@ -32,6 +32,7 @@ export class BlogPostComponent implements OnInit {
                 butterService.post.retrieve(slug)
                     .then((res) => {
                         this.post = res.data;
+                        console.log(this.post)
                     }).catch((res) => {
                     console.log(res);
                 });

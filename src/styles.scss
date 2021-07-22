@@ -9,7 +9,7 @@
 // $custom-typography: mat-typography-config($font-family: "'Noto Sans TC', sans-serif;");
 $custom-typography: mat.define-typography-config(
  
-  $font-family: "Noto Sans TC, Roboto, sans-serif;",
+  $font-family: "Fira Sans, Roboto, sans-serif;",
 );
 @include mat.core($custom-typography);
 
@@ -72,7 +72,7 @@ $social-blue: #2867b2;
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; color: #555555}
-body { margin: 0; font-family: 'Noto Sans TC', Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: 'Fira Sans', Roboto, "Helvetica Neue", sans-serif; }
 
 
 h1,h2,h3,h4,h5,h6{
@@ -103,3 +103,79 @@ h1,h2,h3,h4,h5,h6{
 .box{
   padding: 20px;
 }
+
+.paper-border{
+  border-bottom-left-radius: 15px 255px;
+  border-bottom-right-radius: 225px 15px;
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 225px;
+  border: 2px solid #41403e;
+  border-color: var(--primary);
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+.paper-button{
+  border-bottom-left-radius: 15px 255px;
+  border-bottom-right-radius: 225px 15px;
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 225px;
+  transition: all 235ms ease 0s;
+  box-shadow: 15px 28px 25px -18px rgb(0 0 0 / 20%);
+  transition: all 235ms ease-in-out 0s;
+  color: #41403e;
+  color: var(--primary);
+  border-color: #41403e;
+  border-color: var(--primary);
+  background-color: #41403e;
+  background-color: var(--main-background);
+  align-self: center;
+  background-image: none;
+  border-style: solid;
+  border-width: 2px;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1rem;
+  outline: none;
+  padding: 0.75rem;
+  &:hover {
+    transform: translate3d(0, 2px, 0);
+    box-shadow: 2px 8px 8px -5px rgb(0 0 0 / 30%);
+  }
+
+  &.icon{
+    padding:9px 16px 9px 16px;
+  }
+}
+
+.section-wrapper{
+  padding:40px 0 0 0;
+}
+
+
+.paper-card{
+  // transition: all 235ms ease 0s;
+  box-shadow: 15px 28px 25px -18px rgb(0 0 0 / 20%);
+  border-color: #41403e;
+  border-style: solid;
+  border-width: 2px;
+  &:hover{
+    transform: translate3d(0, 2px, 0);
+    box-shadow: 2px 8px 8px -5px rgb(0 0 0 / 30%) !important;
+  }
+
+}
+
+.mat-paginator-container{
+  justify-content: center !important;
+  border-bottom-left-radius: 25px 115px;
+  border-bottom-right-radius: 155px 25px;
+  border-top-left-radius: 15px 225px;
+  border: 1px solid black;
+  border-top-right-radius: 25px 150px;
+  // max-width: 500px !important;
+}
+// .mat-paginator-outer-container {
+//   justify-content: center !important;
+// }

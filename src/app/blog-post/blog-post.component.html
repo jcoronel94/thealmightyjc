@@ -1,19 +1,54 @@
-<mat-card>
-    <div class="container">
-      <div fxLayout="column" class="blog-details">
-        <div class="container">
-          <div fxLayout="row">
-            <h1 class="blocks">
-              {{post.data?.title}}
-            </h1>
-            <div *ngIf="post.meta?.previous_post"><a [routerLink]="post.meta.previous_post"><</a></div>
-            <div *ngIf="post.meta?.next_post"><a [routerLink]="post.meta.next_post">></a></div>
+<section class="section-wrapper">
+  <app-transclusion>
+    <mat-card class="paper-card">
+      <div class="container">
+        <div fxLayout="column" class="blog-details">
+          <div class="container">
+            <div fxLayout="row">
+              <h1 class="blocks">
+                {{post?.data?.title}}
+              </h1>
+            </div>
+            <h4>
+              {{ post?.data?.author?.first_name }} {{ post?.data?.author?.last_name }}
+            </h4>
+            <div class="post-body" [innerHTML]="post?.data?.body"></div>
+            <div *ngIf="post?.meta?.previous_post"><a [routerLink]="post?.meta?.previous_post">Previous Blog</a></div>
+            <div *ngIf="post?.meta?.next_post"><a [routerLink]="post?.meta?.next_post">Next Blog</a></div>
           </div>
-          <h4>
-            {{ post.data?.author?.first_name }} {{ post.data?.author?.last_name }}
-          </h4>
-          <div class="post-body" [innerHTML]="post.data?.body"></div>
         </div>
       </div>
+    </mat-card>
+  </app-transclusion>
+</section>
+
+<!-- <app-transclusion>
+  <div class='deck'>
+    <div class='card'>
+      <div *ngIf="post?.featured_image" class="imageHeader">
+        <img src="{{post.featured_image}}" alt="featured image" height="auto" width="100%" />
+      </div>
+      <header class='cardHeader'>
+        <a [routerLink]="[post.slug]">
+          <span class='cardHeader_account'>{{post?.title}}</span>
+        </a>
+        <span class='cardHeader_date'>{{post.updated | date}}</span>
+      </header>
+      <div class='cardBody'>
+        <div class='cardText'>
+          <div fxLayout="row">
+            <h1 class="blocks">
+              {{post?.data?.title}}
+            </h1>
+          </div>
+          <h4>
+            {{ post?.data?.author?.first_name }} {{ post?.data?.author?.last_name }}
+          </h4>
+          <div class="post-body" [innerHTML]="post?.data?.body"></div>
+        </div>
+      </div>
+      <div *ngIf="post?.meta?.previous_post"><a [routerLink]="post?.meta?.previous_post">Previous Blog</a></div>
+      <div *ngIf="post?.meta?.next_post"><a [routerLink]="post?.meta?.next_post">Next Blog</a></div>
     </div>
-  </mat-card>
+  </div>
+</app-transclusion> -->

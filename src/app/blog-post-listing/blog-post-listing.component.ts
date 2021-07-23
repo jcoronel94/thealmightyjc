@@ -40,6 +40,9 @@ export class BlogPostListingComponent implements OnInit {
 
   async changePage(index:any){
     console.log(index)
+    if(index?.pageSize && (this.pagesize != index?.pageSize) ){
+      this.pagesize = index.pageSize;
+    }
     this.data  = (await this.getPost(index?.pageIndex + 1, this.pagesize));
     this.posts = this.data?.data?.data || [];
     // this.getPost = (await this.getPost(index?.pageIndex + 1, this.pagesize))?.data?.data || [];

@@ -1,4 +1,4 @@
-<mat-toolbar>
+<mat-toolbar class="with-border">
     <mat-toolbar-row style="background:white" lass="equal_column_spacer">
         <ng-container *ngFor="let item of navList">
             <button class="paper-button" [ngClass]=" item?.icon ? 'icon' : ''" (click)="goto(item.url_slug)">
